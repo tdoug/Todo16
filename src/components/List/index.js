@@ -16,6 +16,10 @@ export default function List() {
         updateTodos([...todos]);
     };
 
+    const clearTodos = () => {
+        updateTodos([]);
+    };
+
     return ( <div>
             <h1>Todo List!</h1>
             <h3>Todos:</h3>
@@ -29,6 +33,9 @@ export default function List() {
             <h3>Add Todo</h3>
             <div>
                 <CreateTodoForm addTodo={addTodo} />
+                <div>
+                    <button onClick={() => { clearTodos(); }} >Clear Todos</button>
+                </div>
             </div>
         </div>
     )
